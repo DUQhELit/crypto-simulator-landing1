@@ -19,10 +19,21 @@
     <!-- Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TNNBP9NBB"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-5TNNBP9NBB');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-5TNNBP9NBB');
+
+        // Button Click Tracking
+        document.addEventListener("DOMContentLoaded", function() {
+            document.getElementById("download-btn").addEventListener("click", function() {
+                gtag('event', 'click', {
+                    'event_category': 'Download',
+                    'event_label': 'Download Button Clicked',
+                    'value': 1
+                });
+            });
+        });
     </script>
 
     <style>
@@ -68,6 +79,7 @@
             margin: 20px 0;
             text-decoration: none;
             border-radius: 8px;
+            cursor: pointer;
         }
 
         .cta:hover {
@@ -96,31 +108,31 @@
             <h2>🔹 Why Use Cryptocurrency Simulator?</h2>
             <p>Want to learn how to trade cryptocurrencies without losing real money? Our simulator provides real-time market data and allows you to copy professional traders' strategies.</p>
             <ul>
-                <li>✅ **Real-Time Market Data** – Trade with live crypto prices</li>
-                <li>✅ **Copy Trading** – Follow expert traders' moves</li>
-                <li>✅ **Portfolio Management** – Track your simulated trades</li>
-                <li>✅ **Educational & Beginner-Friendly** – No real money needed</li>
+                <li>✅ <b>Real-Time Market Data</b> – Trade with live crypto prices</li>
+                <li>✅ <b>Copy Trading</b> – Follow expert traders' moves</li>
+                <li>✅ <b>Portfolio Management</b> – Track your simulated trades</li>
+                <li>✅ <b>Educational & Beginner-Friendly</b> – No real money needed</li>
             </ul>
         </section>
 
         <section>
             <h2>📲 Download Now</h2>
             <p>Available on the App Store & Google Play</p>
-            <a class="cta" href="#" onclick="alert('Redirecting to App Store and Google Play!');">Click Here to Start Trading Smarter Today!</a>
+            <a class="cta" id="download-btn" href="#" onclick="alert('Redirecting to App Store and Google Play!');">Click Here to Start Trading Smarter Today!</a>
         </section>
 
         <section>
             <h2>📢 What Our Users Say</h2>
-            <p>“This app has changed the way I understand crypto trading. It's an excellent tool to learn without risk!” - **Alex T.**</p>
-            <p>“Copy trading helps me test strategies before investing real money. Great for beginners!” - **Jessica M.**</p>
+            <p>“This app has changed the way I understand crypto trading. It's an excellent tool to learn without risk!” - <b>Alex T.</b></p>
+            <p>“Copy trading helps me test strategies before investing real money. Great for beginners!” - <b>Jessica M.</b></p>
         </section>
 
         <section>
             <h2>🚀 How It Works</h2>
             <ol>
-                <li>📥 **Download the App** from App Store or Play Store</li>
-                <li>🔧 **Set Up Your Virtual Portfolio** in minutes</li>
-                <li>📊 **Start Trading & Learning** with live data</li>
+                <li>📥 <b>Download the App</b> from App Store or Play Store</li>
+                <li>🔧 <b>Set Up Your Virtual Portfolio</b> in minutes</li>
+                <li>📊 <b>Start Trading & Learning</b> with live data</li>
             </ol>
         </section>
     </div>
