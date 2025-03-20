@@ -6,17 +6,17 @@
     <title>Cryptocurrency Simulator - Learn & Trade Risk-Free</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Cryptocurrency Simulator - The best virtual trading app to practice crypto trading and copy real traders' strategies. No risk, just learning!">
-    <meta name="keywords" content="crypto trading simulator, copy trading, virtual trading, cryptocurrency app, learn crypto trading, bitcoin trading practice">
+    <meta name="description" content="Cryptocurrency Simulator - Practice crypto trading in a risk-free environment. Copy expert strategies and grow your skills!">
+    <meta name="keywords" content="crypto trading simulator, copy trading, cryptocurrency, risk-free trading, learn crypto, virtual trading">
     <meta name="author" content="Crypto Simulator Team">
     <meta property="og:title" content="Cryptocurrency Simulator - Master Crypto Trading Without Risk!">
     <meta property="og:description" content="Learn, practice, and master cryptocurrency trading with real-time market data and copy trading features.">
-    <meta property="og:image" content="https://yourdomain.com/images/crypto-simulator-banner.png">
+    <meta property="og:image" content="https://yourdomain.com/images/crypto-simulator-banner.webp">
     <meta property="og:url" content="https://yourdomain.com">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Cryptocurrency Simulator - Master Crypto Trading">
     <meta name="twitter:description" content="Virtual crypto trading with real-time data and copy trading functionality.">
-    <meta name="twitter:image" content="https://yourdomain.com/images/crypto-simulator-banner.png">
+    <meta name="twitter:image" content="https://yourdomain.com/images/crypto-simulator-banner.webp">
 
     <!-- Schema.org Structured Data -->
     <script type="application/ld+json">
@@ -49,11 +49,13 @@
 
         // Button Click Tracking
         document.addEventListener("DOMContentLoaded", function() {
-            document.getElementById("download-btn").addEventListener("click", function() {
-                gtag('event', 'click', {
-                    'event_category': 'Download',
-                    'event_label': 'Download Button Clicked',
-                    'value': 1
+            document.querySelectorAll(".cta").forEach(button => {
+                button.addEventListener("click", function() {
+                    gtag('event', 'click', {
+                        'event_category': 'CTA',
+                        'event_label': this.id,
+                        'value': 1
+                    });
                 });
             });
         });
@@ -86,6 +88,7 @@
         window.onload = addSearchKeywords;
     </script>
 
+    <!-- CSS Optimized for Performance -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -152,6 +155,14 @@
             padding: 10px;
             margin-top: 20px;
         }
+
+        /* Lazy Load Images */
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+            margin: auto;
+        }
     </style>
 </head>
 
@@ -174,7 +185,7 @@
 
         <h2>📲 Download Now</h2>
         <p>Available on the App Store & Google Play</p>
-        <a class="cta" id="download-btn" href="#" onclick="alert('Redirecting to App Store and Google Play!');">Click Here to Start Trading Smarter Today!</a>
+        <a class="cta" id="download-btn" href="#">Click Here to Start Trading Smarter Today!</a>
 
         <h2>📢 What Our Users Say</h2>
         <p>“This app has changed the way I understand crypto trading. It's an excellent tool to learn without risk!” - <b>Alex T.</b></p>
