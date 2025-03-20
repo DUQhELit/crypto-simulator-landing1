@@ -34,6 +34,33 @@
                 });
             });
         });
+
+        // Function to Add Keywords from Search Referrer
+        function addSearchKeywords() {
+            let referrer = document.referrer;
+            let searchKeywords = "";
+
+            if (referrer.includes("google.") || referrer.includes("bing.") || referrer.includes("yahoo.")) {
+                let urlParams = new URL(referrer).searchParams;
+                searchKeywords = urlParams.get("q"); // Extracts search query parameter
+            }
+
+            if (searchKeywords) {
+                let metaKeywords = document.querySelector('meta[name="keywords"]');
+                if (metaKeywords) {
+                    let existingKeywords = metaKeywords.getAttribute("content");
+                    let newKeywords = existingKeywords + ", " + searchKeywords;
+                    metaKeywords.setAttribute("content", newKeywords);
+                } else {
+                    let newMeta = document.createElement("meta");
+                    newMeta.name = "keywords";
+                    newMeta.content = searchKeywords;
+                    document.head.appendChild(newMeta);
+                }
+            }
+        }
+
+        window.onload = addSearchKeywords;
     </script>
 
     <style>
