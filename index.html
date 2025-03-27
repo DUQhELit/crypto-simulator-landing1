@@ -30,6 +30,7 @@
       background: #111;
       color: #fff;
       text-align: center;
+      overscroll-behavior: none;
     }
 
     .iphone {
@@ -42,6 +43,8 @@
       box-shadow: 0 0 40px rgba(0,0,0,0.4);
       overflow: hidden;
       position: relative;
+      display: flex;
+      flex-direction: column;
     }
 
     .notch {
@@ -74,10 +77,13 @@
     }
 
     .screen {
+      flex: 1;
       padding: 20px;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
     }
 
-    h1, h2 {
+    h1, h2, h3 {
       color: #4caf50;
       margin-bottom: 10px;
     }
@@ -116,10 +122,7 @@
       margin-top: 15px;
       padding: 10px;
       border-radius: 6px;
-    }
-
-    .social-share {
-      margin: 15px 0;
+      font-style: italic;
     }
 
     .footer {
@@ -148,44 +151,42 @@
     <div class="notch"></div>
     <div class="bookmark-icon" onclick="bookmarkPage()" title="Bookmark this page">🔖</div>
     <div class="screen">
-      <h1>🚀 Master Crypto Trading Without Risk!</h1>
-      <p>Learn, practice, and simulate trades in a safe, data-driven environment.</p>
+      <h1>Learn, Practice & Master Crypto Trading</h1>
+      <p>Learn, practice, and master cryptocurrency trading in a safe, risk-free environment.</p>
 
-      <h2>🔹 Why Use Our App?</h2>
+      <h2>🔹 Why Use Cryptocurrency Simulator?</h2>
+      <p>Want to learn how to trade cryptocurrencies without losing real money? Our simulator provides real-time market data and allows you to copy professional traders' strategies.</p>
+
       <ul>
-        <li>Real-time crypto trading simulation</li>
-        <li>Copy top traders (ETH, BSC, Solana)</li>
-        <li>Track portfolio and PnL with analytics</li>
-        <li>Test strategies without real money</li>
-        <li>Watch ads or upgrade for more funds</li>
-        <li>Perfect for beginners</li>
-        <li>iOS & Android supported</li>
+        <li>✅ Real-Time Market Data – Trade with live crypto prices</li>
+        <li>✅ Copy Trading – Follow expert traders' moves</li>
+        <li>✅ Portfolio Management – Track your simulated trades</li>
+        <li>✅ Educational & Beginner-Friendly – No real money needed</li>
       </ul>
 
-      <h2>📲 Get the App</h2>
+      <h2>📲 Download Now</h2>
+      <p>Available on the App Store & Google Play</p>
       <a class="cta" id="ios" href="#">iOS App Store</a>
       <a class="cta" id="android" href="#">Google Play Store</a>
+      <br>
+      <a class="cta" href="#">Click Here to Start Trading Smarter Today!</a>
 
-      <div class="social-share">
-        <p>Share With Your Friends:</p>
-        <a class="cta" href="https://www.facebook.com/sharer/sharer.php?u=https://simulatedcrypto.com" target="_blank">Facebook</a>
-        <a class="cta" href="https://twitter.com/intent/tweet?text=Try%20TradeSimulator!%20https://simulatedcrypto.com" target="_blank">Share on X</a>
-      </div>
-
+      <h2>📢 What Our Users Say</h2>
       <div class="testimonial">
-        <h3>What Users Are Saying</h3>
-        <p>"This is the best way to practice trading crypto!" – Jamie L.</p>
-        <p>"The copy trade feature is a game changer!" – Alex W.</p>
+        <p>“This app has changed the way I understand crypto trading. It's an excellent tool to learn without risk!”</p>
+        <p>– Alex T.</p>
+      </div>
+      <div class="testimonial">
+        <p>“Copy trading helps me test strategies before investing real money. Great for beginners!”</p>
+        <p>– Jessica M.</p>
       </div>
 
       <h2>🚀 How It Works</h2>
       <ol>
-        <li>Download the app</li>
-        <li>Set up your virtual portfolio</li>
-        <li>Start trading with live market data</li>
+        <li>📥 Download the App from App Store or Play Store</li>
+        <li>🔧 Set Up Your Virtual Portfolio in minutes</li>
+        <li>📊 Start Trading & Learning with live data</li>
       </ol>
-
-      <a href="#" class="cta" onclick="bookmarkPage()">Bookmark This Page</a>
     </div>
   </div>
 
