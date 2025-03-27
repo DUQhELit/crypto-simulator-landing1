@@ -1,207 +1,239 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cryptocurrency Simulator - Learn & Trade Risk-Free</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cryptocurrency Simulator - Learn & Trade Risk-Free</title>
+  <meta name="description" content="Practice crypto trading in a risk-free environment. Copy experts, grow skills, and track performance with real-time data." />
+  <meta name="keywords" content="crypto trading simulator, virtual crypto trading, copy trading, learn crypto, risk-free trading" />
+  <meta name="author" content="Crypto Simulator Team">
+  <meta property="og:title" content="Cryptocurrency Simulator - Master Crypto Trading Without Risk!">
+  <meta property="og:description" content="Master crypto strategies in a safe, live data-driven environment. Copy trade, learn, grow!">
+  <meta property="og:image" content="https://simulatedcrypto.com/images/crypto-simulator-banner.webp">
+  <meta property="og:url" content="https://simulatedcrypto.com">
+  <meta name="twitter:card" content="summary_large_image">
 
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="Cryptocurrency Simulator - Practice crypto trading in a risk-free environment. Copy expert strategies and grow your skills!">
-    <meta name="keywords" content="crypto trading simulator, copy trading, cryptocurrency, risk-free trading, learn crypto, virtual trading">
-    <meta name="author" content="Crypto Simulator Team">
-    <meta property="og:title" content="Cryptocurrency Simulator - Master Crypto Trading Without Risk!">
-    <meta property="og:description" content="Learn, practice, and master cryptocurrency trading with real-time market data and copy trading features.">
-    <meta property="og:image" content="https://yourdomain.com/images/crypto-simulator-banner.webp">
-    <meta property="og:url" content="https://yourdomain.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Cryptocurrency Simulator - Master Crypto Trading">
-    <meta name="twitter:description" content="Virtual crypto trading with real-time data and copy trading functionality.">
-    <meta name="twitter:image" content="https://yourdomain.com/images/crypto-simulator-banner.webp">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TNNBP9NBB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5TNNBP9NBB');
+  </script>
 
-    <!-- Schema.org Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "Cryptocurrency Simulator",
-        "operatingSystem": "iOS, Android",
-        "applicationCategory": "FinanceApplication",
-        "aggregateRating": {
-            "@type": "AggregateRating",
-            "ratingValue": "4.7",
-            "reviewCount": "1200"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        }
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #111;
+      color: #fff;
+      text-align: center;
     }
-    </script>
 
-    <!-- Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5TNNBP9NBB"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'G-5TNNBP9NBB');
+    .iphone {
+      width: 390px;
+      height: 844px;
+      margin: 40px auto;
+      border: 16px solid #333;
+      border-radius: 48px;
+      background: #1c1c1c;
+      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      overflow: hidden;
+      position: relative;
+    }
 
-        // Button Click Tracking
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll(".cta").forEach(button => {
-                button.addEventListener("click", function() {
-                    gtag('event', 'click', {
-                        'event_category': 'CTA',
-                        'event_label': this.id,
-                        'value': 1
-                    });
-                });
-            });
-        });
+    .notch {
+      width: 160px;
+      height: 30px;
+      background: #333;
+      border-radius: 0 0 20px 20px;
+      position: absolute;
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
 
-        // Function to Add Keywords from Search Referrer
-        function addSearchKeywords() {
-            let referrer = document.referrer;
-            let searchKeywords = "";
+    .bookmark-icon {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 22px;
+      cursor: pointer;
+      z-index: 5;
+      background: #4caf50;
+      padding: 6px 10px;
+      border-radius: 20px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.4);
+    }
 
-            if (referrer.includes("google.") || referrer.includes("bing.") || referrer.includes("yahoo.")) {
-                let urlParams = new URL(referrer).searchParams;
-                searchKeywords = urlParams.get("q"); // Extract search query parameter
-            }
+    .bookmark-icon:hover {
+      background: #45a049;
+    }
 
-            if (searchKeywords) {
-                let metaKeywords = document.querySelector('meta[name="keywords"]');
-                if (metaKeywords) {
-                    let existingKeywords = metaKeywords.getAttribute("content");
-                    let newKeywords = existingKeywords + ", " + searchKeywords;
-                    metaKeywords.setAttribute("content", newKeywords);
-                } else {
-                    let newMeta = document.createElement("meta");
-                    newMeta.name = "keywords";
-                    newMeta.content = searchKeywords;
-                    document.head.appendChild(newMeta);
-                }
-            }
-        }
+    .screen {
+      padding: 20px;
+    }
 
-        window.onload = addSearchKeywords;
-    </script>
+    h1, h2 {
+      color: #4caf50;
+      margin-bottom: 10px;
+    }
 
-    <!-- CSS Optimized for Performance -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-        }
+    ul, ol {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px 0;
+      text-align: left;
+    }
 
-        header {
-            background-color: #4caf50;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
+    ul li, ol li {
+      background: #2b2b2b;
+      margin: 5px 0;
+      padding: 10px;
+      border-left: 4px solid #4caf50;
+    }
 
-        .container {
-            width: 90%;
-            max-width: 800px;
-            margin: 20px auto;
-            background-color: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+    .cta {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 12px 20px;
+      background: #4caf50;
+      color: white;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: bold;
+    }
 
-        h1, h2 {
-            color: #4caf50;
-        }
+    .cta:hover {
+      background: #45a049;
+    }
 
-        .features, .benefits, .steps {
-            list-style-type: none;
-            padding: 0;
-        }
+    .testimonial {
+      background: #333;
+      margin-top: 15px;
+      padding: 10px;
+      border-radius: 6px;
+    }
 
-        .features li, .benefits li, .steps li {
-            margin: 10px 0;
-            padding: 10px;
-            background: #e8f5e9;
-            border-left: 5px solid #4caf50;
-            text-align: left;
-        }
+    .social-share {
+      margin: 15px 0;
+    }
 
-        .cta {
-            display: inline-block;
-            background-color: #4caf50;
-            color: white;
-            padding: 15px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 18px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
+    .footer {
+      padding: 15px;
+      background: #222;
+      font-size: 14px;
+    }
 
-        .cta:hover {
-            background-color: #45a049;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            padding: 10px;
-            margin-top: 20px;
-        }
-
-        /* Lazy Load Images */
-        img {
-            width: 100%;
-            height: auto;
-            display: block;
-            margin: auto;
-        }
-    </style>
+    .sticky-download {
+      position: fixed;
+      bottom: 15px;
+      right: 15px;
+      background: #4caf50;
+      color: white;
+      padding: 12px 18px;
+      border-radius: 20px;
+      font-weight: bold;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      z-index: 99;
+    }
+  </style>
 </head>
-
 <body>
+  <div class="iphone">
+    <div class="notch"></div>
+    <div class="bookmark-icon" onclick="bookmarkPage()" title="Bookmark this page">🔖</div>
+    <div class="screen">
+      <h1>🚀 Master Crypto Trading Without Risk!</h1>
+      <p>Learn, practice, and simulate trades in a safe, data-driven environment.</p>
 
-    <header>
-        <h1>🚀 Master Crypto Trading Without Risk!</h1>
-        <p>Learn, practice, and master cryptocurrency trading in a safe, risk-free environment.</p>
-    </header>
+      <h2>🔹 Why Use Our App?</h2>
+      <ul>
+        <li>Real-time crypto trading simulation</li>
+        <li>Copy top traders (ETH, BSC, Solana)</li>
+        <li>Track portfolio and PnL with analytics</li>
+        <li>Test strategies without real money</li>
+        <li>Watch ads or upgrade for more funds</li>
+        <li>Perfect for beginners</li>
+        <li>iOS & Android supported</li>
+      </ul>
 
-    <div class="container">
-        <h2>🔹 Why Use Cryptocurrency Simulator?</h2>
-        <p>Want to learn how to trade cryptocurrencies without losing real money? Our simulator provides real-time market data and allows you to copy professional traders' strategies.</p>
-        <ul class="features">
-            <li>✅ <b>Real-Time Market Data</b> – Trade with live crypto prices</li>
-            <li>✅ <b>Copy Trading</b> – Follow expert traders' moves</li>
-            <li>✅ <b>Portfolio Management</b> – Track your simulated trades</li>
-            <li>✅ <b>Educational & Beginner-Friendly</b> – No real money needed</li>
-        </ul>
+      <h2>📲 Get the App</h2>
+      <a class="cta" id="ios" href="#">iOS App Store</a>
+      <a class="cta" id="android" href="#">Google Play Store</a>
 
-        <h2>📲 Download Now</h2>
-        <p>Available on the App Store & Google Play</p>
-        <a class="cta" id="download-btn" href="#">Click Here to Start Trading Smarter Today!</a>
+      <div class="social-share">
+        <p>Share With Your Friends:</p>
+        <a class="cta" href="https://www.facebook.com/sharer/sharer.php?u=https://simulatedcrypto.com" target="_blank">Facebook</a>
+        <a class="cta" href="https://twitter.com/intent/tweet?text=Try%20TradeSimulator!%20https://simulatedcrypto.com" target="_blank">Share on X</a>
+      </div>
 
-        <h2>📢 What Our Users Say</h2>
-        <p>“This app has changed the way I understand crypto trading. It's an excellent tool to learn without risk!” - <b>Alex T.</b></p>
-        <p>“Copy trading helps me test strategies before investing real money. Great for beginners!” - <b>Jessica M.</b></p>
+      <div class="testimonial">
+        <h3>What Users Are Saying</h3>
+        <p>"This is the best way to practice trading crypto!" – Jamie L.</p>
+        <p>"The copy trade feature is a game changer!" – Alex W.</p>
+      </div>
 
-        <h2>🚀 How It Works</h2>
-        <ol class="steps">
-            <li>📥 <b>Download the App</b> from App Store or Play Store</li>
-            <li>🔧 <b>Set Up Your Virtual Portfolio</b> in minutes</li>
-            <li>📊 <b>Start Trading & Learning</b> with live data</li>
-        </ol>
+      <h2>🚀 How It Works</h2>
+      <ol>
+        <li>Download the app</li>
+        <li>Set up your virtual portfolio</li>
+        <li>Start trading with live market data</li>
+      </ol>
+
+      <a href="#" class="cta" onclick="bookmarkPage()">Bookmark This Page</a>
     </div>
+  </div>
 
-    <footer>
-        <p>&copy; <script>document.write(new Date().getFullYear());</script> Cryptocurrency Simulator. All rights reserved.</p>
-    </footer>
+  <a href="#" class="sticky-download">Download App</a>
 
+  <div class="footer">
+    &copy; <span id="year"></span> Crypto Simulator Team. All rights reserved.
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    function bookmarkPage() {
+      const title = document.title;
+      const url = window.location.href;
+      if (window.sidebar && window.sidebar.addPanel) {
+        window.sidebar.addPanel(title, url, "");
+      } else if (window.external && ("AddFavorite" in window.external)) {
+        window.external.AddFavorite(url, title);
+      } else {
+        alert("Press Ctrl+D (or Cmd+D) to bookmark this page.");
+      }
+    }
+
+    document.querySelectorAll('.cta').forEach(btn => {
+      btn.addEventListener('click', () => {
+        gtag('event', 'click', {
+          event_category: 'CTA',
+          event_label: btn.id || btn.textContent.trim(),
+          value: 1
+        });
+      });
+    });
+
+    window.onload = function () {
+      let ref = document.referrer;
+      if (ref.includes("google.") || ref.includes("bing.") || ref.includes("yahoo.")) {
+        try {
+          let q = new URL(ref).searchParams.get("q");
+          if (q) {
+            let meta = document.querySelector("meta[name='keywords']");
+            if (!meta.content.includes(q)) meta.content += `, ${q}`;
+          }
+        } catch (e) {
+          console.error("Keyword injection failed", e);
+        }
+      }
+    }
+  </script>
 </body>
 </html>
