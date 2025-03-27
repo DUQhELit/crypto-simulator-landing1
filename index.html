@@ -23,33 +23,68 @@
   </script>
 
   <style>
+    :root {
+      --bg: #f7f7f7;
+      --text: #111;
+      --primary: #00796b;
+      --secondary: #ffffff;
+      --card: #f0f0f0;
+      --border: #ccc;
+      --shadow: rgba(0, 0, 0, 0.1);
+      --link-hover: #00695c;
+    }
+
+    body.dark-mode {
+      --bg: #111;
+      --text: #fff;
+      --primary: #4caf50;
+      --secondary: #1c1c1c;
+      --card: #2b2b2b;
+      --border: #333;
+      --shadow: rgba(0, 0, 0, 0.4);
+      --link-hover: #45a049;
+    }
+
     body {
       font-family: 'Segoe UI', sans-serif;
       margin: 0;
       padding: 0;
-      background: #111;
-      color: #fff;
+      background: var(--bg);
+      color: var(--text);
       text-align: center;
       overscroll-behavior: none;
+      transition: background 0.3s, color 0.3s;
     }
 
     header {
       padding: 20px;
-      background: #1a1a1a;
+      background: var(--secondary);
       font-size: 24px;
-      color: white;
       font-weight: bold;
-      border-bottom: 2px solid #4caf50;
+      border-bottom: 2px solid var(--primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .toggle-theme {
+      font-size: 14px;
+      padding: 6px 12px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
     }
 
     .iphone {
       width: 390px;
       height: 844px;
       margin: 20px auto 40px auto;
-      border: 16px solid #333;
+      border: 16px solid var(--border);
       border-radius: 48px;
-      background: #1c1c1c;
-      box-shadow: 0 0 40px rgba(0,0,0,0.4);
+      background: var(--secondary);
+      box-shadow: 0 0 40px var(--shadow);
       overflow: hidden;
       position: relative;
       display: flex;
@@ -59,7 +94,7 @@
     .notch {
       width: 160px;
       height: 30px;
-      background: #333;
+      background: var(--border);
       border-radius: 0 0 20px 20px;
       position: absolute;
       top: -16px;
@@ -75,14 +110,14 @@
       font-size: 22px;
       cursor: pointer;
       z-index: 5;
-      background: #4caf50;
+      background: var(--primary);
       padding: 6px 10px;
       border-radius: 20px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.4);
+      box-shadow: 0 0 5px var(--shadow);
     }
 
     .bookmark-icon:hover {
-      background: #45a049;
+      background: var(--link-hover);
     }
 
     .screen {
@@ -93,7 +128,7 @@
     }
 
     h1, h2, h3 {
-      color: #4caf50;
+      color: var(--primary);
       margin-bottom: 10px;
     }
 
@@ -105,17 +140,17 @@
     }
 
     ul li, ol li {
-      background: #2b2b2b;
+      background: var(--card);
       margin: 5px 0;
       padding: 10px;
-      border-left: 4px solid #4caf50;
+      border-left: 4px solid var(--primary);
     }
 
     .cta {
       display: inline-block;
       margin: 10px 5px;
       padding: 12px 20px;
-      background: #4caf50;
+      background: var(--primary);
       color: white;
       text-decoration: none;
       border-radius: 6px;
@@ -123,11 +158,11 @@
     }
 
     .cta:hover {
-      background: #45a049;
+      background: var(--link-hover);
     }
 
     .testimonial {
-      background: #333;
+      background: var(--card);
       margin-top: 15px;
       padding: 10px;
       border-radius: 6px;
@@ -136,7 +171,7 @@
 
     .footer {
       padding: 15px;
-      background: #222;
+      background: var(--secondary);
       font-size: 14px;
     }
 
@@ -144,13 +179,13 @@
       position: fixed;
       bottom: 15px;
       right: 15px;
-      background: #4caf50;
+      background: var(--primary);
       color: white;
       padding: 12px 18px;
       border-radius: 20px;
       font-weight: bold;
       text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      box-shadow: 0 0 10px var(--shadow);
       z-index: 99;
     }
 
@@ -182,7 +217,7 @@
     }
 
     .modal-content {
-      background: #222;
+      background: var(--secondary);
       padding: 20px;
       border-radius: 10px;
       text-align: center;
@@ -199,7 +234,7 @@
     .modal button {
       margin-top: 10px;
       padding: 10px 16px;
-      background: #4caf50;
+      background: var(--primary);
       border: none;
       color: white;
       font-weight: bold;
@@ -217,9 +252,9 @@
   </style>
 </head>
 <body>
-
   <header>
-    Crypto Simulator App
+    <span>Crypto Simulator App</span>
+    <button class="toggle-theme" onclick="toggleTheme()">Toggle Theme</button>
   </header>
 
   <div class="iphone">
@@ -238,10 +273,9 @@
       </ul>
 
       <h2>📲 Download Now</h2>
-      <p>Available on the App Store & Google Play</p>
       <a class="cta" id="ios" href="#">iOS App Store</a>
       <a class="cta" id="android" href="#">Google Play Store</a>
-      <a class="cta" href="#">Click Here to Start Trading Smarter Today!</a>
+      <a class="cta" href="#">Start Trading Smarter Today!</a>
 
       <div>
         <a class="cta" href="#" onclick="openModal()">Subscribe</a>
@@ -263,9 +297,9 @@
 
       <h2>🚀 How It Works</h2>
       <ol>
-        <li>📥 Download the App from App Store or Play Store</li>
-        <li>🔧 Set Up Your Virtual Portfolio in minutes</li>
-        <li>📊 Start Trading & Learning with live data</li>
+        <li>📥 Download the App</li>
+        <li>🔧 Set Up Your Virtual Portfolio</li>
+        <li>📊 Start Trading with Live Data</li>
       </ol>
     </div>
   </div>
@@ -310,6 +344,15 @@
       document.getElementById("subscribeModal").style.display = "none";
     }
 
+    function toggleTheme() {
+      document.body.classList.toggle("dark-mode");
+      localStorage.setItem("theme", document.body.classList.contains("dark-mode") ? "dark" : "light");
+    }
+
+    if (localStorage.getItem("theme") === "dark") {
+      document.body.classList.add("dark-mode");
+    }
+
     document.querySelectorAll('.cta').forEach(btn => {
       btn.addEventListener('click', () => {
         if (typeof gtag === "function") {
@@ -337,7 +380,7 @@
           console.error("Keyword injection failed", e);
         }
       }
-    }
+    };
   </script>
 </body>
 </html>
