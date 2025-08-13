@@ -1,0 +1,36 @@
+---
+title: "Crypto Mining Explained"
+description: "Discover how cryptocurrency mining works, what equipment is required and how profitability is calculated."
+slug: "crypto-mining"
+date: "2025-08-13"
+image: "/images/mining/56b16cf7-fc4a-4325-835c-de59d787deeb.png"
+---
+
+import Image from 'next/image';
+
+<Image src={frontMatter.image} alt="GPU mining farm" width={800} height={400} className="rounded-lg my-4" />
+
+## The basics of mining
+
+Mining is the process of securing proof‑of‑work blockchains by performing complex computations. Miners assemble recent transactions into blocks and compete to find a **nonce** — a random number — that makes the block hash meet the network’s difficulty requirement. The first miner to find a valid hash broadcasts the block to the network and receives a **block reward**, consisting of newly minted coins plus transaction fees.
+
+Because mining requires substantial computational power, it has evolved from hobbyist participation to professionalised operations. Early miners used CPUs and GPUs found in home computers. As Bitcoin’s difficulty increased, miners adopted **application‑specific integrated circuits (ASICs)** designed solely for hashing algorithms like SHA‑256. Other networks, such as Ethereum, were resistant to ASICs for years, but ultimately specialised hardware emerged there too.
+
+## Calculating profitability
+
+To determine whether mining makes economic sense, you need to account for:
+
+- **Hashrate:** the number of hashes your hardware can compute per second.
+- **Difficulty:** a network parameter that adjusts roughly every two weeks so blocks are found at a consistent rate.
+- **Block reward and price:** coins earned per block and their current market value.
+- **Power consumption and electricity cost:** how much energy your hardware uses and the price per kilowatt‑hour.
+- **Pool fee:** if you mine via a pool, it will charge a small percentage of your rewards.
+- **Hardware cost:** the upfront expense of purchasing mining rigs.
+
+Our mining calculator helps you estimate your **expected coins per day**, revenue, power cost, profit and **breakeven period**. Bear in mind that network difficulty and coin prices fluctuate constantly, so profitability today may not reflect future returns.
+
+## Environmental considerations
+
+Proof‑of‑work mining consumes a significant amount of electricity. Critics argue that this energy use is wasteful, while supporters contend it secures the network and incentivises development of renewable energy sources. Some miners operate in regions with excess hydroelectric or geothermal power to lower costs and reduce carbon emissions. Newer blockchain designs, like proof‑of‑stake, aim to maintain security while drastically reducing energy consumption.
+
+Always weigh environmental impact alongside financial returns when deciding whether to mine cryptocurrency.
